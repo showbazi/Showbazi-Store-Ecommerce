@@ -136,7 +136,8 @@ const UpdateUser = () => {
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
 
-  console.log("user", user);
+  // console.log("user", user);
+
   useEffect(() => {
     if (user && user._id !== id) {
       //here id is taken from the params by using usePrams hook from above

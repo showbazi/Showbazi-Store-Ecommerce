@@ -60,6 +60,20 @@
   padding: 0;
 }
 
+.css-yuu8jj {
+  padding-left: 4px;
+}
+
+.css-yuu8jj .MuiTreeItem-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-left: 8px;
+}
+
+.css-yuu8jj .MuiTreeItem-iconContainer svg {
+  font-size: 1.5rem;
+}
+
 .css-1g86id8-MuiTreeItem-content .MuiTreeItem-iconContainer {
   width: 32px;
 }

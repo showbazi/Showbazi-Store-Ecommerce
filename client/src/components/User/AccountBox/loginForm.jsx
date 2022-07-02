@@ -30,7 +30,7 @@ const LoginForm = ({ switchToSignUp, dispatch }) => {
   const loginSubmit = (e) => {
     e.preventDefault();
     dispatch(login(loginEmail, loginPassword));
-    console.log("form submitted");
+    // console.log("form submitted");
   };
 
   // useEffect(() => {

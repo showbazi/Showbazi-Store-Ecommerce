@@ -127,6 +127,22 @@
   display: none;
 }
 
+.userContainer > ul > li > a > p.badge {
+  position: absolute;
+  background: red;
+  font-size: 0.7rem;
+  border-radius: 100%;
+  width: 16px;
+  text-align: center;
+  top: -8px;
+  border: 1px solid #06202a;
+  right: -9px;
+}
+
+.userContainer > ul > li > a:hover > p.badge {
+  top: -28px;
+}
+
 .userContainer > ul > li > a > span.iconTooltipOne {
   left: -8px;
 }

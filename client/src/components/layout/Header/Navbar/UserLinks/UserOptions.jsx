@@ -29,21 +29,21 @@ const UserOptions = ({ user }) => {
   }
 
   function dashboard() {
-    console.log("user", user);
+    // console.log("user", user);
     if (user) {
       navigate("/admin/dashboard");
     }
   }
 
   function orders() {
-    console.log("user", user);
+    // console.log("user", user);
     if (user) {
       navigate("/orders");
     }
   }
 
   function account() {
-    console.log("user", user);
+    // console.log("user", user);
     if (user) {
       navigate("/account");
     }

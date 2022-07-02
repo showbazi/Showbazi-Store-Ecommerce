@@ -82,7 +82,7 @@ const CustomImgCarousel = ({ productImages }) => {
     }
   };
 
-  console.log("currentIndex", currentIndex);
+  // console.log("currentIndex", currentIndex);
 
   return (
     // <Container>

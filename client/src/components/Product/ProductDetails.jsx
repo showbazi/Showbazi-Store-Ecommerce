@@ -68,6 +68,11 @@ const ProductDetails = () => {
     alert.success(`${quantity} item added to cart successfully`);
   };
 
+  // going to cart page on Clicking the buy now button
+  const buyNowHandler = () => {
+    navigate("/cart");
+  };
+
   // to open & close the dialog of review dialog box
   const submitReviewToggle = () => {
     if (isAuthenticated === false) {
@@ -106,7 +111,7 @@ const ProductDetails = () => {
 
   const options = {
     size: "small",
-    value: product.ratings * 1,
+    value: product?.ratings * 1,
     readOnly: true,
     precision: 0.5,
   };
@@ -193,7 +198,7 @@ const ProductDetails = () => {
                     <FaCartArrowDown style={{ margin: "4px 0 6px" }} />
                     <div>Add to cart</div>
                   </button>
-                  <button className="order">
+                  <button className="order" onClick={buyNowHandler}>
                     <FaBolt />
                     <div>Order now</div>
                   </button>

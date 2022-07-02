@@ -10,6 +10,9 @@ import "./Header.css";
 const Header = () => {
   const { user } = useSelector((state) => state.user);
 
+  // for displaying the badge of number of items present in the cart
+  const { cartItems } = useSelector((state) => state.cart);
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -53,6 +56,10 @@ const Header = () => {
             <li>
               <Link to="/cart">
                 <FaCartPlus className="icon" />
+                {/* {console.log("cartitems length", cartItems)} */}
+                {cartItems?.length > 0 && (
+                  <p className="badge">{cartItems?.length}</p>
+                )}
                 <span className="iconTooltip iconTooltipTwo">Cart</span>
               </Link>
             </li>
