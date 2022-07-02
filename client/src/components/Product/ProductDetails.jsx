@@ -70,6 +70,7 @@ const ProductDetails = () => {
 
   // going to cart page on Clicking the buy now button
   const buyNowHandler = () => {
+    dispatch(addItemsToCart(id, quantity));
     navigate("/cart");
   };
 
