@@ -61,17 +61,18 @@
 }
 
 .css-yuu8jj {
-  padding-left: 4px;
+  padding-left: 4px !important;
+  padding-right: 0 !important;
 }
 
 .css-yuu8jj .MuiTreeItem-label {
-  font-size: 1.2rem;
-  font-weight: 500;
-  padding-left: 8px;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  padding-left: 8px !important;
 }
 
 .css-yuu8jj .MuiTreeItem-iconContainer svg {
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
 }
 
 .css-1g86id8-MuiTreeItem-content .MuiTreeItem-iconContainer {
