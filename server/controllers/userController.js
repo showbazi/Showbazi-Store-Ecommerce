@@ -37,25 +37,49 @@ const registerUser = asyncMiddleware(async (req, res, next) => {
 
 // LOGIN USER
 const loginUser = asyncMiddleware(async (req, res, next) => {
-  const { email, password } = req.body;
+  const { email, password, isGuest } = req.body;
 
-  if (!email || !password) {
-    return next(new ErrorHandler("Please enter email and password", 400));
+  // --------------- if the user is guest---------------
+  if (isGuest === "guest") {
+    const user1 = await User.findOne({ email: process.env.GUEST_EMAIL }).select(
+      "+password",
+    );
+
+    if (!user1) {
+      return next(new ErrorHandler("Invalid email 1", 401));
+    }
+
+    const password = process.env.GUEST_PASSWORD;
+
+    const matched = await user1.comparePassword(password);
+
+    if (!matched) {
+      return next(new ErrorHandler("Invalid password 1", 401));
+    }
+
+    sendToken(user1, 200, res);
+  }
+  // ------------if the user is not a guest------------
+  else {
+    if (!email || !password) {
+      return next(new ErrorHandler("Please enter email and password", 400));
+    }
+
+    const user = await User.findOne({ email }).select("+password");
+
+    if (!user) {
+      return next(new ErrorHandler("Invalid email or password", 401));
+    }
+
+    const isPasswordMatched = await user.comparePassword(password);
+
+    if (!isPasswordMatched) {
+      return next(new ErrorHandler("Invalid email or password", 401));
+    }
+
+    sendToken(user, 200, res);
   }
 
-  const user = await User.findOne({ email }).select("+password");
-
-  if (!user) {
-    return next(new ErrorHandler("Invalid email or password", 401));
-  }
-
-  const isPasswordMatched = await user.comparePassword(password);
-
-  if (!isPasswordMatched) {
-    return next(new ErrorHandler("Invalid email or password", 401));
-  }
-
-  sendToken(user, 200, res);
   // const token = user.getJWTToken();
 
   // res.status(200).json({

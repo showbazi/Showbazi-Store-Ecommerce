@@ -39,7 +39,7 @@ import {
 } from "../constants/userConstant";
 
 // ----------LOGIN-----------------
-const login = (email, password) => async (dispatch) => {
+const login = (email, password, isGuest) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST });
 
@@ -47,7 +47,7 @@ const login = (email, password) => async (dispatch) => {
 
     const { data } = await axios.post(
       "/api/v1/login",
-      { email, password },
+      { email, password, isGuest },
       config,
     );
 

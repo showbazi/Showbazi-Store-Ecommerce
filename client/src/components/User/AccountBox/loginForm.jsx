@@ -26,11 +26,20 @@ const LoginForm = ({ switchToSignUp, dispatch }) => {
 
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const [isGuest, setIsGuest] = useState("");
 
   const loginSubmit = (e) => {
     e.preventDefault();
-    dispatch(login(loginEmail, loginPassword));
+    dispatch(login(loginEmail, loginPassword, isGuest));
     // console.log("form submitted");
+  };
+
+  // to handle the guest login
+  const handleGuest = (e) => {
+    e.preventDefault();
+    setIsGuest("guest");
+    setLoginEmail("xxxxxxx@xxxxx.xxx");
+    setLoginPassword("xxxxxxxxxxxx");
   };
 
   // useEffect(() => {
@@ -49,14 +58,14 @@ const LoginForm = ({ switchToSignUp, dispatch }) => {
         <Input
           type="email"
           placeholder="Email"
-          required
+          required={isGuest === "guest" ? false : true}
           value={loginEmail}
           onChange={(e) => setLoginEmail(e.target.value)}
         />
         <Input
           type="password"
           placeholder="Password"
-          required
+          required={isGuest === "guest" ? false : true}
           value={loginPassword}
           onChange={(e) => setLoginPassword(e.target.value)}
         />
@@ -70,6 +79,13 @@ const LoginForm = ({ switchToSignUp, dispatch }) => {
         Don't have an account?
         <BoldLink href="#" onClick={switchToSignUp}>
           SignUp
+        </BoldLink>
+      </MutedText>
+      <Marginer direction="vertical" margin={10} />
+      <MutedText>
+        Are you a Guest?
+        <BoldLink href="#" onClick={(e) => handleGuest(e)}>
+          Guest Login
         </BoldLink>
       </MutedText>
     </BoxContainer>
