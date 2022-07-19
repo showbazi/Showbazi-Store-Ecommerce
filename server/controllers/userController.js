@@ -46,7 +46,7 @@ const loginUser = asyncMiddleware(async (req, res, next) => {
     );
 
     if (!user1) {
-      return next(new ErrorHandler("Invalid email 1", 401));
+      return next(new ErrorHandler("Invalid email and password", 401));
     }
 
     const password = process.env.GUEST_PASSWORD;
@@ -54,7 +54,7 @@ const loginUser = asyncMiddleware(async (req, res, next) => {
     const matched = await user1.comparePassword(password);
 
     if (!matched) {
-      return next(new ErrorHandler("Invalid password 1", 401));
+      return next(new ErrorHandler("Invalid email and password", 401));
     }
 
     sendToken(user1, 200, res);
