@@ -1,6 +1,6 @@
 {
     "version": 2,
     "name": "showbazi_store_ecommerce_api",
-    "build": [{"src": "server.js", "use": "@vercel/node"}],
+    "builds": [{"src": "server.js", "use": "@vercel/node"}],
     "routes": [{"src": "/(.*)", "dest": "/server.js"}]
 }
