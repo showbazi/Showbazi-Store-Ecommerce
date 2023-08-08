@@ -1,5 +1,5 @@
-import {server} from "./../server.js";
+import app from "../app.js";
 
-console.log("server is logged")
+console.log("app is logged");
 
-export default server;
+export default app;
