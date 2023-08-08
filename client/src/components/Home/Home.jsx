@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import Metadata from "../layout/Metadata";
 import "./Home.css";
-import ProductCard from "./ProductCard.js";
+import ProductCard from "./ProductCard.jsx";
 import { clearErrors, getProduct } from "../../state/actions/productActions";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";

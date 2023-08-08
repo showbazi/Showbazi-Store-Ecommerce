@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { CheckCircle } from "@mui/icons-material";
+import CheckCircle from "@mui/icons-material/CheckCircle";
 import "./OrderSuccess.css";
 import { Link } from "react-router-dom";
 
