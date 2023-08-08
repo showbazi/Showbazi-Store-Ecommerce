@@ -1,11 +1,10 @@
 import React, { Fragment, useEffect, useState } from "react";
-import {
-  AccountTree,
-  Description,
-  Storage,
-  Spellcheck,
-  AttachMoney,
-} from "@mui/icons-material";
+import AccountTree  from "@mui/icons-material/AccountTree";
+import Description  from "@mui/icons-material/Description";
+import Storage  from "@mui/icons-material/Storage";
+import Spellcheck  from "@mui/icons-material/Spellcheck";
+import AttachMoney  from "@mui/icons-material/AttachMoney";
+
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import Metadata from "../layout/Metadata";

@@ -5,7 +5,9 @@ import Metadata from "../layout/Metadata";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { Button } from "@mui/material";
-import { Delete, Edit } from "@mui/icons-material";
+import Delete from "@mui/icons-material/Delete";
+import Edit from "@mui/icons-material/Edit";
+
 import Sidebar from "./Sidebar";
 import "./AllProductsList.css";
 import {

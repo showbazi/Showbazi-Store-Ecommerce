@@ -6,7 +6,7 @@ import { myOrders, clearErrors } from "../../state/actions/orderAction";
 import Metadata from "../layout/Metadata";
 import "./MyOrders.css";
 import { DataGrid } from "@mui/x-data-grid";
-import { Launch } from "@mui/icons-material";
+import Launch from "@mui/icons-material/Launch";
 
 const MyOrders = () => {
   const dispatch = useDispatch();

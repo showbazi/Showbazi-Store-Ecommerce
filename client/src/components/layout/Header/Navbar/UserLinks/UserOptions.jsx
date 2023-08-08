@@ -1,6 +1,10 @@
 import React, { Fragment, useState } from "react";
 import { Backdrop, SpeedDial, SpeedDialAction } from "@mui/material";
-import { ExitToApp, ListAlt, Person, Dashboard } from "@mui/icons-material";
+import ExitToApp from "@mui/icons-material/ExitToApp";
+import ListAlt from "@mui/icons-material/ListAlt";
+import Person from "@mui/icons-material/Person";
+import Dashboard from "@mui/icons-material/Dashboard";
+
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../../../state/actions/userActions";

@@ -10,7 +10,9 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import axios from "axios";
-import { Event, VpnKey, CreditCard } from "@mui/icons-material";
+import Event from "@mui/icons-material/Event";
+import VpnKey from "@mui/icons-material/VpnKey";
+import CreditCard from "@mui/icons-material/CreditCard";
 import CheckOutSteps from "./CheckOutSteps.jsx";
 import "./PaymentProcess.css";
 import { Marginer } from "../User/AccountBox/marginer/Marginer";

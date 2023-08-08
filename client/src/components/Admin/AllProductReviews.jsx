@@ -11,7 +11,8 @@ import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { Button } from "@mui/material";
 import MetaData from "../layout/Metadata";
-import { Delete, Star } from "@mui/icons-material";
+import Delete from "@mui/icons-material/Delete";
+import Star from "@mui/icons-material/Star";
 import SideBar from "./Sidebar";
 import { DELETE_REVIEW_RESET } from "../../state/constants/productConstants";
 

@@ -12,7 +12,7 @@ import { UPDATE_ORDER_RESET } from "../../state/constants/orderConstant";
 import Sidebar from "./Sidebar";
 import Loader from "../layout/Loader/Loader";
 import { Button } from "@mui/material";
-import { AccountTree } from "@mui/icons-material";
+import AccountTree  from "@mui/icons-material/AccountTree";
 import "./UpdateOrderProcess.css";
 
 const UpdateOrderProcess = () => {

@@ -1,5 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
-import { Person, MailOutline, VerifiedUser } from "@mui/icons-material";
+import Person from "@mui/icons-material/Person";
+import MailOutline from "@mui/icons-material/MailOutline";
+import VerifiedUser from "@mui/icons-material/VerifiedUser";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import Metadata from "../layout/Metadata";
