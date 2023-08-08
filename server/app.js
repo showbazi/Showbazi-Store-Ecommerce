@@ -10,7 +10,7 @@ import errorMiddleware from "./middleware/error.js";
 // Below config only used when using in development mode or npm run dev. But in production mode the platform(here "HEROKU") provide their own config
 // config
 if (process.env.NODE_ENV !== "PRODUCTION") {
-  dotenv.config({ path: "server/config/config.env" });
+  dotenv.config({ path: "config/config.env" });
 }
 
 const app = express();
