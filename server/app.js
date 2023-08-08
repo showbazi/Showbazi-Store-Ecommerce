@@ -10,7 +10,7 @@ import errorMiddleware from "./middleware/error.js";
 // Below config only used when using in development mode or npm run dev. But in production mode the platform(here "HEROKU") provide their own config
 // config
 if (process.env.NODE_ENV !== "PRODUCTION") {
-  dotenv.config({ path: "server/config/config.env" });
+  dotenv.config({ path: "config/config.env" });
 }
 
 const app = express();
@@ -35,13 +35,13 @@ app.use("/api/v1", payment);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// connecting the final build html file with database
-app.use(express.static(path.join(__dirname, "../client/build"))); //getting the static file (index.html) from build folder in client
+// // connecting the final build html file with database
+// app.use(express.static(path.join(__dirname, "../client/build"))); //getting the static file (index.html) from build folder in client
 
-// accessing the frontend by only running the backend server
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/build/index.html"));
-});
+// // accessing the frontend by only running the backend server
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "../client/build/index.html"));
+// });
 
 // Middlewares for errors
 app.use(errorMiddleware);
