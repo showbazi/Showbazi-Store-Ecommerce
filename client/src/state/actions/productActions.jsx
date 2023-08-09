@@ -29,6 +29,7 @@ import {
   DELETE_REVIEW_SUCCESS,
   DELETE_REVIEW_FAIL,
 } from "../constants/productConstants";
+import api from "utils/api.jsx";
 
 // ----------------- Get All Products ----------------------------
 const getProduct = () => async (dispatch) => {
@@ -37,7 +38,7 @@ const getProduct = () => async (dispatch) => {
       type: ALL_PRODUCT_REQUEST,
     });
 
-    const { data } = await axios.get("/api/v1/products");
+    const { data } = await api.get("/api/v1/products");
 
     dispatch({
       type: ALL_PRODUCT_SUCCESS,
