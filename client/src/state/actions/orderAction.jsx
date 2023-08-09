@@ -19,8 +19,6 @@ import {
   DELETE_ORDER_SUCCESS,
   DELETE_ORDER_FAIL,
 } from "../constants/orderConstant";
-
-import axios from "axios";
 import api from "utils/api.jsx";
 
 export const createOrder = (order) => async (dispatch) => {

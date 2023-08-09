@@ -1,6 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import axios from "axios";
+import api from "utils/api.jsx";
 import "./App.css";
 import Header from "./components/layout/Header/Header.jsx";
 import Footer from "./components/layout/Footer/Footer.jsx";
@@ -43,7 +43,7 @@ function App() {
   const AccountBox = lazy(() => import("./components/User/AccountBox/AccountBox")); 
 
   const getStripeKey = async () => {
-    const { data } = await axios.get("/api/v1/stripeapikey");
+    const { data } = await api.get("/api/v1/stripeapikey");
     setStripeApiKey(data.stripeApiKey);
   };
 

@@ -9,7 +9,7 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
-import axios from "axios";
+import api from "utils/api.jsx";
 import Event from "@mui/icons-material/Event";
 import VpnKey from "@mui/icons-material/VpnKey";
 import CreditCard from "@mui/icons-material/CreditCard";
@@ -60,7 +60,7 @@ const PaymentProcess = () => {
           "Content-Type": "application/json",
         },
       };
-      const { data } = await axios.post(
+      const { data } = await api.post(
         "/api/v1/process/payment",
         paymentData,
         config,
