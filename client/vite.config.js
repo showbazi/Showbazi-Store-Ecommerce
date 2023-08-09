@@ -5,6 +5,9 @@ import path from 'path';
 
 export default defineConfig(() => {
   return {
+    server: {
+      port: 3001
+    },
     define: {
       'process.env': {},
     },

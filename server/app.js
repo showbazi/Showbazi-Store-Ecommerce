@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import fileUpload from "express-fileupload";
 import dotenv from "dotenv";
 import path from "path";
+import cors from 'cors';
 import { fileURLToPath } from "url"; //to resolve the error: (ReferenceError: __dirname is not defined in ES module scope)
 import errorMiddleware from "./middleware/error.js";
 
@@ -18,6 +19,13 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
+
+// const corsOptions = {
+//   origin: 'http://localhost:3001',
+//   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+// };
+
+app.use(cors());
 
 // Route imports
 import product from "./routes/productRoute.js";
