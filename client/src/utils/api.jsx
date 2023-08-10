@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create an Axios instance with base URL
 const api = axios.create({
-  baseURL: 'http://localhost:8000/',
+  baseURL: 'https://showbazi-store-api.onrender.com/',
 });
 
 // Request Interceptor
