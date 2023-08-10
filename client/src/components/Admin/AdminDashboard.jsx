@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar.jsx";
 import "./AdminDashboard.css";
 import { Link } from "react-router-dom";
 // import { Chart } from "chart.js/auto"; // these Chart rectified all the below mentioned errors because the chart component we are using requires the functions, components or dependency available with this chart library (NOTE:- One downside it increases the build size because it also imports other component that we don't require)
-// import { CategoryScale, ArcElement, LinearScale, PointElement } from "chart.js";
+import { Chart as ChartJS, CategoryScale, ArcElement, LinearScale, PointElement, LineElement } from "chart.js";
 import { Doughnut, Line } from "react-chartjs-2";
 import { getAllProductsAdmin } from "../../state/actions/productActions";
 import { getAllOrdersAdmin } from "../../state/actions/orderAction";
@@ -26,6 +26,14 @@ const AdminDashboard = () => {
         outOfStock += 1;
       }
     });
+
+  // Uncaught Error: "arc" is not a registered element.
+  // Uncaught Error: "category" is not a registered scale.
+  // Uncaught Error: "linear" is not a registered scale.
+  //  Uncaught Error: "point" is not a registered element
+  // Below lines of code is added to get rid of above errors.It happened because of the chartjs upgraded to v4 library
+  // And this solution was reffered from react-chart-js official website
+  ChartJS.register(CategoryScale, ArcElement, LinearScale, PointElement, LineElement);
 
   useEffect(() => {
     dispatch(getAllProductsAdmin());
@@ -63,19 +71,6 @@ const AdminDashboard = () => {
     ],
   };
 
-  // Uncaught Error: "arc" is not a registered element.
-  // Uncaught Error: "category" is not a registered scale.
-  // Uncaught Error: "linear" is not a registered scale.
-  //  Uncaught Error: "point" is not a registered element
-  // Below lines of code is added to get rid of above errors.It happened because of the chartjs upgraded to v4 library
-  // And this solution was reffered from react-chart-js official website
-
-  // Chart.register(CategoryScale);
-  // Chart.register(ArcElement);
-  // Chart.register(LinearScale);
-  // Chart.register(PointElement);
-
-  // Note :- On Importing Chart from chart.js/auto every error showing above is solved.
 
   return (
     <div className="dashboardPage">
