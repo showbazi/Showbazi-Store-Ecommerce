@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 import validator from "validator";
 import crypto from "crypto";
+import { EXPIRE_DAY } from "../constant";
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -58,7 +59,7 @@ userSchema.pre("save", async function (next) {
 // JSON WEB TOKEN (JWT)
 userSchema.methods.getJWTToken = function () {
   return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRE,
+    expiresIn: EXPIRE_DAY.JWT_EXPIRE,
   });
 };
 
