@@ -27,12 +27,6 @@ const registerUser = asyncMiddleware(async (req, res, next) => {
   });
 
   sendToken(user, 201, res);
-  // const token = user.getJWTToken();
-
-  // res.status(201).json({
-  //     success: true,
-  //     token,
-  // });
 });
 
 // LOGIN USER
