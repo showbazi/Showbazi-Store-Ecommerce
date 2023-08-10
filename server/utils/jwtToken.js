@@ -1,4 +1,4 @@
-import { EXPIRE_DAY } from "../constant";
+import { EXPIRE_DAY } from "../constant.js";
 
 // CREATING TOKENS AND SAVING IN COOKIE
 const sendToken = (user, statusCode, res) => {

@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 import validator from "validator";
 import crypto from "crypto";
-import { EXPIRE_DAY } from "../constant";
+import { EXPIRE_DAY } from "../constant.js";
 
 const userSchema = new mongoose.Schema({
   name: {
