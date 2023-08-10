@@ -14,17 +14,22 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
   dotenv.config({ path: "config/config.env" });
 }
 
+const corsOptions = {
+  origin: [
+    'http://localhost:3001',
+    'https://showbazi-store.vercel.app',
+  ],
+  credentials: true, // Allow cookies to be sent
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
 const app = express();
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
 
-// const corsOptions = {
-//   origin: 'http://localhost:3001',
-//   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-// };
 
 // Route imports
 import product from "./routes/productRoute.js";
