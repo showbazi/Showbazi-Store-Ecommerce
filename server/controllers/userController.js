@@ -33,16 +33,11 @@ const registerUser = asyncMiddleware(async (req, res, next) => {
 const loginUser = asyncMiddleware(async (req, res, next) => {
   const { email, password, isGuest } = req.body;
 
-  console.log('USER IS GUEST', isGuest);
-  console.log('GUEST EMAIL', process.env.GUEST_EMAIL);
-
   // --------------- if the user is guest---------------
   if (isGuest === "guest") {
     const user1 = await User.findOne({ email: process.env.GUEST_EMAIL }).select(
       "+password",
     );
-
-    console.log("GUEST USER: ", user1);
 
     if (!user1) {
       return next(new ErrorHandler("Invalid email and password", 401));
@@ -78,13 +73,6 @@ const loginUser = asyncMiddleware(async (req, res, next) => {
 
     sendToken(user, 200, res);
   }
-
-  // const token = user.getJWTToken();
-
-  // res.status(200).json({
-  //     success: true,
-  //     token,
-  // });
 });
 
 // LOGOUT USER
