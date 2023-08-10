@@ -4,8 +4,6 @@ import { EXPIRE_DAY } from "../constant.js";
 const sendToken = (user, statusCode, res) => {
     const token = user.getJWTToken();
 
-    console.log('TOKEN: GENERATED')
-
     // options for cookie
     const options = {
         expires: new Date(
@@ -13,8 +11,6 @@ const sendToken = (user, statusCode, res) => {
         ),    
         httpOnly: true,
     };
-
-    console.log('TOKEN OPTIONS:', options)
 
     res.status(statusCode).cookie("token", token, options).json({
         success: true,
