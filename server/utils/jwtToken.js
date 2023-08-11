@@ -10,6 +10,8 @@ const sendToken = (user, statusCode, res) => {
             Date.now() + EXPIRE_DAY.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
         ),    
         httpOnly: true,
+        sameSite: "None", // Set SameSite attribute to None for cross-site usage
+        secure: true,     // Set secure flag when using SameSite=None
     };
 
     res.status(statusCode).cookie("token", token, options).json({
