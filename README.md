@@ -6,7 +6,7 @@
 
 ## Env Variables
 
-Make Sure to Create a config.env file in backend/config directory and add appropriate variables in order to use the app.
+Make Sure to Create a config.env file in backend/config directory and add appropriate variables in order to use the app.(Note:- In development environment)
 
 **Essential Variables**  
 PORT=
@@ -26,9 +26,10 @@ CLOUDINARY_API_KEY
 CLOUDINARY_API_SECRET  
  \_fill each filed with your info respectively*
 
+**Live Website** Click [Here](https://showbazi-store.vercel.app/)
+
 ## Author
 
 **Instagram** Click [Here](https://www.instagram.com/b1sagar/) **@b1sagar**  
 **LinkedIn** Click [Here](https://www.linkedin.com/in/b-sagar-081bb8136/) **@B Sagar**
-
 **Twitter** Click [Here](https://twitter.com/BtheSagar) **@BtheSagar**
